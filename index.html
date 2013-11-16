@@ -14,7 +14,43 @@
 		</style>
 		<script src="javascript/jquery-1.10.2.min.js"></script>
 		<script>
-			// SU CODIGO AQUI	****					
+			// SU CODIGO AQUI	****	
+			$(function() {
+				var boton_reproducir = $("#boton-reproducir");
+				//var boton_pausa = $("#boton-pausa");
+				var caja_video = $("#video");
+				var estado_video = $("#estado-video");
+				var elVideo = $("video")[0];
+				
+				/*boton_reproducir.click(function(){
+	          		elVideo.play();
+	          		caja_video.addClass("sombras");
+	          		estado_video.html("Video Activo");
+				});
+				boton_pausa.click(function(){
+	          		elVideo.pause();
+	          		caja_video.removeClass("sombras");
+	          		estado_video.html("Video Pausado");
+				});*/
+				
+				boton_reproducir.click(function(){
+					if(elVideo.paused)
+						{
+	          				elVideo.play();
+	          				caja_video.addClass("sombras");
+	          				estado_video.html("Video Activo");
+	          				boton_reproducir.html("Pausa");
+	          			}
+	          		else
+						{
+	          				elVideo.pause();
+	          				caja_video.removeClass("sombras");
+	          				estado_video.html("Video Pausado");
+	          				boton_reproducir.html("Reproducir");
+	          			}
+				});
+				
+			});				
 		</script>
 	</head>
 	<body>
@@ -34,7 +70,7 @@
 
 			<p id="controles">
 				<a id="boton-reproducir">Reproducir</a>
-				<a id="boton-pausa">Pausa</a>
+				<!-- <a id="boton-pausa">Pausa</a> -->
 			</p>
 
 		</div>
